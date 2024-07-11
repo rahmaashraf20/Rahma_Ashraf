@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Score extends StatelessWidget {
-  const Score({super.key});
+class ScoreView extends StatelessWidget {
+  const ScoreView({super.key});
 
   @override
   Widget build(BuildContext context) {

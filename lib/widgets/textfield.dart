@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Textfield extends StatelessWidget {
-  Textfield({
+class CustomTextField extends StatelessWidget {
+  CustomTextField({
     super.key,
     required this.icon,
     required this.hinttext,
@@ -9,15 +9,15 @@ class Textfield extends StatelessWidget {
   });
   final Icon icon;
   final String hinttext;
-  void Function(String) onchanged;
+  void Function(String)? onchanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value) {
-        if (value!.isEmpty) {
+      validator: (data) {
+        if (data!.isEmpty) {
           return 'field is required';
-        } else if (value.length < 3) {
+        } else if (data.length < 3) {
           return 'it must me more than 3 character';
         }
       },
@@ -32,6 +32,5 @@ class Textfield extends StatelessWidget {
           border:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.black))),
     );
-    
   }
 }

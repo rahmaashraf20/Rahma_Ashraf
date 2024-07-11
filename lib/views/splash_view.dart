@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class SplashView extends StatelessWidget {
+  const SplashView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +10,7 @@ class HomePage extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image:
-              AssetImage('assets/background.jpg'), // Path to your image
+              AssetImage('assets/images/background.jpg'), // Path to your image
           fit: BoxFit.fill,
         ),
       ),
@@ -21,7 +20,7 @@ class HomePage extends StatelessWidget {
           const Spacer(
             flex: 5,
           ),
-          Image.asset('assets/quiz_time.png'),
+          Image.asset('assets/images/quiz_time.png'),
           const Text(
             'ITI Quiz App',
             style: TextStyle(
@@ -65,9 +64,9 @@ class CustomButton extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   )),
-              onPressed: (
-                
-              ) {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('login');
+              },
               child: const Text(
                 'Start',
                 style: TextStyle(color: Colors.white),

@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
 
-class QuestionsScreen extends StatelessWidget {
+class QuizView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final color = ModalRoute.of(context)!.settings.arguments as Color;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.logout),
+          icon: Icon(
+            Icons.logout,
+            color: Colors.black,
+          ),
           onPressed: () {},
         ),
-      
-        title: Text("Quiz app"),
+
+        title: Text(
+          "Quiz app",
+          style: TextStyle(color: Colors.black),
+        ),
         // centerTitle: false,
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: color,
       ),
       body: Padding(
         padding: const EdgeInsets.all(22),
@@ -46,7 +53,6 @@ class QuestionsScreen extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.settings), label: "Settings"),
-          
         ],
       ),
     );
